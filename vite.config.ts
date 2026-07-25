@@ -12,7 +12,21 @@ export default defineConfig({
     },
   },
   server: {
-    host: true,
-    allowedHosts: true,
+    host: "0.0.0.0",
+    port: 5173,
+    strictPort: true,
+    allowedHosts: [".cursorvm.com", ".us5p.cursorvm.com", "localhost", "127.0.0.1"],
+    cors: true,
+    // Cursor external Chrome opens the app via an HTTPS proxy on port 443.
+    ws: {
+      clientPort: 443,
+    },
+  },
+  preview: {
+    host: "0.0.0.0",
+    port: 5173,
+    strictPort: true,
+    allowedHosts: [".cursorvm.com", ".us5p.cursorvm.com", "localhost", "127.0.0.1"],
+    cors: true,
   },
 });
