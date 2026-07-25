@@ -18,17 +18,17 @@ export default function Testimonials() {
   const next = () => setCurrent((c) => (c + 1) % testimonials.length);
   const visible = [testimonials[current % testimonials.length], testimonials[(current + 1) % testimonials.length]];
   return (
-    <section className="py-24 px-4 bg-gradient-to-b from-purple-50/40 to-white overflow-hidden">
+    <section className="py-24 px-4 bg-gradient-to-b from-purple-50/40 dark:from-purple-950/20 to-card overflow-hidden">
       <div className="max-w-5xl mx-auto">
         <motion.div ref={ref} initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="text-center mb-14">
-          <span className="inline-block bg-yellow-100 text-yellow-700 rounded-full px-4 py-1.5 text-sm font-black mb-4">Parent Stories</span>
+          <span className="inline-block badge-yellow rounded-full px-4 py-1.5 text-sm font-black mb-4">Parent Stories</span>
           <h2 className="text-4xl md:text-5xl font-black mb-4" style={{ fontFamily: "'Fredoka One', cursive" }}>Families Love<span className="text-yellow-500"> Sunshine Kids</span></h2>
         </motion.div>
         <div className="relative">
           <div className="grid md:grid-cols-2 gap-6">
             {visible.map((t, i) => (
-              <motion.div key={`${current}-${i}`} initial={{ opacity: 0, x: i === 0 ? -30 : 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.4 }} className={`${t.bg} rounded-3xl p-7 border-2 border-white shadow-lg relative`}>
-                <div className={`w-10 h-10 rounded-2xl bg-gradient-to-br ${t.color} flex items-center justify-center mb-4 shadow`}><Quote className="w-5 h-5 text-white" /></div>
+              <motion.div key={`${current}-${i}`} initial={{ opacity: 0, x: i === 0 ? -30 : 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.4 }} className={`${t.bg} rounded-3xl p-7 border-2 border-white dark:border-border shadow-lg relative`}>
+                <div className={`w-10 h-10 rounded-2xl bg-gradient-to-br ${t.color} flex items-center justify-center mb-4 shadow`}><Quote className="w-5 h-5 text-on-gradient" /></div>
                 <p className="text-foreground font-semibold leading-relaxed mb-6 text-sm md:text-base">{`"`}{t.text}{`"`}</p>
                 <div className="flex items-center gap-3">
                   <div className={`w-11 h-11 rounded-full bg-gradient-to-br ${t.color} flex items-center justify-center text-xl shadow`}>{t.avatar}</div>
@@ -38,9 +38,9 @@ export default function Testimonials() {
             ))}
           </div>
           <div className="flex items-center justify-center gap-4 mt-8">
-            <button onClick={prev} className="w-10 h-10 rounded-full bg-white border-2 border-border shadow flex items-center justify-center hover:bg-orange-50 hover:border-orange-300 transition-all cursor-pointer"><ChevronLeft className="w-4 h-4" /></button>
-            <div className="flex gap-2">{testimonials.map((_, i) => <button key={i} onClick={() => setCurrent(i)} className={`w-2.5 h-2.5 rounded-full transition-all cursor-pointer ${i === current % testimonials.length ? "bg-orange-400 w-6" : "bg-border"}`} />)}</div>
-            <button onClick={next} className="w-10 h-10 rounded-full bg-white border-2 border-border shadow flex items-center justify-center hover:bg-orange-50 hover:border-orange-300 transition-all cursor-pointer"><ChevronRight className="w-4 h-4" /></button>
+            <button onClick={prev} className="w-10 h-10 rounded-full bg-card border-2 border-border shadow flex items-center justify-center text-foreground hover:bg-orange-50 dark:hover:bg-orange-950/40 hover:border-orange-300 dark:hover:border-orange-700 transition-all cursor-pointer"><ChevronLeft className="w-4 h-4" /></button>
+            <div className="flex gap-2">{testimonials.map((_, i) => <button key={i} onClick={() => setCurrent(i)} className={`h-2.5 rounded-full transition-all cursor-pointer ${i === current % testimonials.length ? "bg-orange-500 w-6" : "bg-border w-2.5"}`} aria-label={`Go to testimonial ${i + 1}`} />)}</div>
+            <button onClick={next} className="w-10 h-10 rounded-full bg-card border-2 border-border shadow flex items-center justify-center text-foreground hover:bg-orange-50 dark:hover:bg-orange-950/40 hover:border-orange-300 dark:hover:border-orange-700 transition-all cursor-pointer"><ChevronRight className="w-4 h-4" /></button>
           </div>
         </div>
       </div>

@@ -14,21 +14,21 @@ export default function Footer() {
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center shadow"><Sun className="w-5 h-5 text-white" /></div>
-              <span className="text-xl font-black text-white" style={{ fontFamily: "'Fredoka One', cursive" }}>Sunshine <span className="text-yellow-400">Kids</span></span>
+              <span className="text-xl font-black text-on-gradient" style={{ fontFamily: "'Fredoka One', cursive" }}>Sunshine <span className="text-brand-yellow">Kids</span></span>
             </div>
-            <p className="text-sm text-background/60 font-semibold leading-relaxed mb-5">A nurturing kindergarten where every child's potential is discovered, celebrated, and developed.</p>
+            <p className="text-sm text-footer-muted font-semibold leading-relaxed mb-5">A nurturing kindergarten where every child's potential is discovered, celebrated, and developed.</p>
             <div className="flex gap-3">{["📘", "📸", "▶️"].map((icon, i) => <div key={i} className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center text-base hover:bg-white/20 transition-colors cursor-pointer">{icon}</div>)}</div>
           </div>
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h4 className="font-black text-white mb-4 text-sm uppercase tracking-wider">{category}</h4>
-              <ul className="space-y-2.5">{links.map((link) => <li key={link}><a href="#" className="text-sm text-background/60 font-semibold hover:text-yellow-400 transition-colors cursor-pointer">{link}</a></li>)}</ul>
+              <h4 className="font-black text-on-gradient mb-4 text-sm uppercase tracking-wider">{category}</h4>
+              <ul className="space-y-2.5">{links.map((link) => <li key={link}><a href="#" className="text-sm text-footer-link font-semibold hover:text-footer-link-hover transition-colors cursor-pointer">{link}</a></li>)}</ul>
             </div>
           ))}
         </div>
         <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-background/40 font-semibold">© {new Date().getFullYear()} Sunshine Kids Kindergarten. All rights reserved.</p>
-          <p className="text-sm text-background/40 font-semibold flex items-center gap-1.5">Made with <Heart className="w-3.5 h-3.5 text-pink-400 fill-pink-400" /> for little ones everywhere</p>
+          <p className="text-sm text-footer-subtle font-semibold">© {new Date().getFullYear()} Sunshine Kids Kindergarten. All rights reserved.</p>
+          <p className="text-sm text-footer-subtle font-semibold flex items-center gap-1.5">Made with <Heart className="w-3.5 h-3.5 text-pink-400 dark:text-pink-300 fill-pink-400 dark:fill-pink-300" /> for little ones everywhere</p>
         </div>
       </div>
     </footer>

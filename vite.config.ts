@@ -18,7 +18,7 @@ export default defineConfig({
     allowedHosts: [".cursorvm.com", ".us5p.cursorvm.com", "localhost", "127.0.0.1"],
     cors: true,
     // Cursor external Chrome opens the app via an HTTPS proxy on port 443.
-    ws: {
+    hmr: {
       clientPort: 443,
     },
   },

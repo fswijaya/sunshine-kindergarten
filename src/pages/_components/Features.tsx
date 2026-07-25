@@ -17,10 +17,10 @@ function FeatureCard({ feature, index }: { feature: typeof features[0]; index: n
   const inView = useInView(ref, { once: true, margin: "-50px" });
   const Icon = feature.icon;
   return (
-    <motion.div ref={ref} initial={{ opacity: 0, y: 40 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: index * 0.08 }} whileHover={{ scale: 1.04, rotate: "0deg" }} style={{ rotate: feature.rotate }} className={`${feature.bg} rounded-3xl p-6 border-2 border-white shadow-lg cursor-default transition-shadow hover:shadow-xl`}>
+    <motion.div ref={ref} initial={{ opacity: 0, y: 40 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: index * 0.08 }} whileHover={{ scale: 1.04, rotate: "0deg" }} style={{ rotate: feature.rotate }} className={`${feature.bg} rounded-3xl p-6 border-2 border-white dark:border-border shadow-lg cursor-default transition-shadow hover:shadow-xl`}>
       <div className={`w-12 h-12 ${feature.iconBg} rounded-2xl flex items-center justify-center mb-4`}>
         <div className={`w-7 h-7 bg-gradient-to-br ${feature.color} rounded-xl flex items-center justify-center`}>
-          <Icon className="w-4 h-4 text-white" />
+          <Icon className="w-4 h-4 text-on-gradient" />
         </div>
       </div>
       <h3 className="text-lg font-black mb-2 text-foreground">{feature.title}</h3>
@@ -33,10 +33,10 @@ export default function Features() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
   return (
-    <section id="features" className="py-24 px-4 bg-white">
+    <section id="features" className="py-24 px-4 bg-card">
       <div className="max-w-6xl mx-auto">
         <motion.div ref={ref} initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="text-center mb-16">
-          <span className="inline-block bg-purple-100 text-purple-600 rounded-full px-4 py-1.5 text-sm font-black mb-4">Why Choose Us</span>
+          <span className="inline-block badge-purple rounded-full px-4 py-1.5 text-sm font-black mb-4">Why Choose Us</span>
           <h2 className="text-4xl md:text-5xl font-black text-foreground mb-4" style={{ fontFamily: "'Fredoka One', cursive" }}>Everything Your Child<span className="text-purple-500"> Needs to Grow</span></h2>
           <p className="text-muted-foreground font-semibold text-lg max-w-xl mx-auto">We combine warmth, structure, and creativity to give every child the best start in life.</p>
         </motion.div>

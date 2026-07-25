@@ -15,11 +15,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-16"
-      style={{
-        background:
-          "linear-gradient(135deg, oklch(0.98 0.03 85) 0%, oklch(0.97 0.04 320) 50%, oklch(0.97 0.04 200) 100%)",
-      }}
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-16 bg-hero-gradient"
     >
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-0 left-0 w-96 h-96 rounded-full opacity-30 blur-3xl bg-yellow-300" />
@@ -43,7 +39,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 bg-yellow-100 text-yellow-700 rounded-full px-4 py-2 text-sm font-bold mb-6"
+            className="inline-flex items-center gap-2 badge-yellow rounded-full px-4 py-2 text-sm font-bold mb-6"
           >
             <Sparkles className="w-4 h-4" />
             Enrolling for 2025–2026!
@@ -62,8 +58,7 @@ export default function Hero() {
             <span className="text-foreground"> Come to</span>
             <br />
             <span
-              className="text-transparent bg-clip-text"
-              style={{ backgroundImage: "linear-gradient(90deg, #f97316, #ec4899, #a855f7)" }}
+              className="text-gradient-brand"
             >
               Shine!
             </span>
@@ -86,7 +81,7 @@ export default function Hero() {
           >
             <Button
               size="lg"
-              className="bg-gradient-to-r from-orange-400 to-pink-500 text-white font-black text-lg rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all px-8 py-6"
+              className="bg-cta-warm text-on-gradient font-black text-lg rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all px-8 py-6"
               onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
             >
               <Heart className="w-5 h-5 mr-2" />
@@ -95,7 +90,7 @@ export default function Hero() {
             <Button
               size="lg"
               variant="secondary"
-              className="font-black text-lg rounded-2xl border-2 border-purple-200 hover:border-purple-400 hover:bg-purple-50 transition-all px-8 py-6"
+              className="font-black text-lg rounded-2xl border-2 border-purple-200 dark:border-purple-800 hover:border-purple-400 dark:hover:border-purple-500 hover:bg-purple-50 dark:hover:bg-purple-950/40 transition-all px-8 py-6"
               onClick={() => document.querySelector("#programs")?.scrollIntoView({ behavior: "smooth" })}
             >
               Explore Programs
@@ -148,7 +143,7 @@ export default function Hero() {
               <div className="w-8 h-8 rounded-xl bg-yellow-400 flex items-center justify-center text-lg">⭐</div>
               <div>
                 <div className="text-xs font-black text-foreground">Top Rated</div>
-                <div className="flex gap-0.5">{"★★★★★".split("").map((s, i) => <span key={i} className="text-yellow-400 text-xs">{s}</span>)}</div>
+                <div className="flex gap-0.5">{"★★★★★".split("").map((s, i) => <span key={i} className="text-brand-yellow text-xs">{s}</span>)}</div>
               </div>
             </motion.div>
             <motion.div
@@ -167,7 +162,7 @@ export default function Hero() {
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               className="absolute top-2 left-8 z-20"
             >
-              <Star className="w-8 h-8 text-yellow-400 fill-yellow-400" />
+              <Star className="w-8 h-8 text-brand-yellow fill-brand-yellow" />
             </motion.div>
           </div>
         </motion.div>
@@ -175,7 +170,7 @@ export default function Hero() {
 
       <div className="absolute bottom-0 left-0 right-0">
         <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
-          <path d="M0 40 C360 80 1080 0 1440 40 L1440 80 L0 80 Z" fill="white" />
+          <path d="M0 40 C360 80 1080 0 1440 40 L1440 80 L0 80 Z" className="fill-card" />
         </svg>
       </div>
     </section>

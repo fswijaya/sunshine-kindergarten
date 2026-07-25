@@ -16,10 +16,10 @@ export default function Gallery() {
   const inView = useInView(ref, { once: true });
   const [hovered, setHovered] = useState<number | null>(null);
   return (
-    <section id="gallery" className="py-24 px-4 bg-white">
+    <section id="gallery" className="py-24 px-4 bg-card">
       <div className="max-w-6xl mx-auto">
         <motion.div ref={ref} initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="text-center mb-14">
-          <span className="inline-block bg-pink-100 text-pink-600 rounded-full px-4 py-1.5 text-sm font-black mb-4">Our Gallery</span>
+          <span className="inline-block badge-pink rounded-full px-4 py-1.5 text-sm font-black mb-4">Our Gallery</span>
           <h2 className="text-4xl md:text-5xl font-black mb-4" style={{ fontFamily: "'Fredoka One', cursive" }}>A Peek Inside Our<span className="text-pink-500"> Happy Place</span></h2>
           <p className="text-muted-foreground font-semibold text-lg max-w-xl mx-auto">Moments of joy, curiosity, and friendship captured every day.</p>
         </motion.div>
