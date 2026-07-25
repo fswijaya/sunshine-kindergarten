@@ -16,7 +16,7 @@ export default function ContactSection() {
       <div className="max-w-5xl mx-auto">
         <motion.div ref={ref} initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="text-center mb-14">
           <span className="inline-block bg-teal-100 text-teal-700 rounded-full px-4 py-1.5 text-sm font-black mb-4">Get In Touch</span>
-          <h2 className="text-4xl md:text-5xl font-black mb-4" style={{ fontFamily: "'Fredoka One', cursive" }}>Start Your Child{'s}<span className="text-teal-500"> Journey Today</span></h2>
+          <h2 className="text-4xl md:text-5xl font-black mb-4" style={{ fontFamily: "'Fredoka One', cursive" }}>Start Your Child&apos;s<span className="text-teal-500"> Journey Today</span></h2>
           <p className="text-muted-foreground font-semibold text-lg max-w-xl mx-auto">We'd love to meet you and your little one! Reach out to schedule a free visit.</p>
         </motion.div>
         <div className="grid md:grid-cols-2 gap-10 items-start">
