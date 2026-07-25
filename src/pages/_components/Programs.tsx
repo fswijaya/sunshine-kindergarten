@@ -18,7 +18,7 @@ export default function Programs() {
         <motion.div ref={ref} initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="text-center mb-16">
           <span className="inline-block bg-green-100 text-green-600 rounded-full px-4 py-1.5 text-sm font-black mb-4">Our Programs</span>
           <h2 className="text-4xl md:text-5xl font-black mb-4" style={{ fontFamily: "'Fredoka One', cursive" }}>Programs for Every<span className="text-green-500"> Little Learner</span></h2>
-          <p className="text-muted-foreground font-semibold text-lg max-w-xl mx-auto">Thoughtfully designed programs to match your child{'s} age and developmental stage.</p>
+          <p className="text-muted-foreground font-semibold text-lg max-w-xl mx-auto">Thoughtfully designed programs to match your child&apos;s age and developmental stage.</p>
         </motion.div>
         <div className="grid md:grid-cols-3 gap-8 items-start">
           {programs.map((program, i) => (
