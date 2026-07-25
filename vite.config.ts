@@ -13,7 +13,7 @@ export default defineConfig({
   },
   server: {
     host: "0.0.0.0",
-    port: 5173,
+    port: 3000,
     strictPort: true,
     allowedHosts: [".cursorvm.com", ".us5p.cursorvm.com", "localhost", "127.0.0.1"],
     cors: true,
@@ -24,7 +24,7 @@ export default defineConfig({
   },
   preview: {
     host: "0.0.0.0",
-    port: 5173,
+    port: 3000,
     strictPort: true,
     allowedHosts: [".cursorvm.com", ".us5p.cursorvm.com", "localhost", "127.0.0.1"],
     cors: true,

@@ -7,7 +7,7 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
   reporter: [["list"], ["html", { open: "never" }]],
   use: {
-    baseURL: "http://127.0.0.1:5174",
+    baseURL: "http://127.0.0.1:3001",
     trace: "on-first-retry",
     screenshot: "only-on-failure",
   },
@@ -22,8 +22,8 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: "pnpm dev --host 127.0.0.1 --port 5174",
-    url: "http://127.0.0.1:5174",
+    command: "pnpm dev --host 127.0.0.1 --port 3001",
+    url: "http://127.0.0.1:3001",
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,
     env: {
